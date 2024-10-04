@@ -1,0 +1,23 @@
+<!-- <form (ngSubmit)>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input type="number" class="form-control" />
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form> -->
+
+<form [formGroup]="userForm" (ngSubmit)="handleSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input formControlName="name" type="text" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label for="age" class="form-label">Age</label>
+    <input formControlName="age" type="number" class="form-control" />
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form>
