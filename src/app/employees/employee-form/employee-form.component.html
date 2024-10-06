@@ -1,0 +1,86 @@
+<form [formGroup]="employeeForm" (ngSubmit)="handleSubmit()">
+  <div class="">
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input
+        type="text"
+        required
+        matInput
+        formControlName="fName"
+        placeholder="Ex. Harry"
+      />
+    </mat-form-field>
+  </div>
+  <div class="">
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input
+        type="text"
+        required
+        matInput
+        formControlName="lName"
+        placeholder="Ex. Potter"
+      />
+    </mat-form-field>
+  </div>
+  <div class="">
+    <mat-radio-group formControlName="gender" aria-label="Select an option">
+      <mat-label>Gender</mat-label>
+      <mat-radio-button value="Male">Male</mat-radio-button>
+      <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <div class="">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        required
+        matInput
+        formControlName="email"
+        placeholder="Ex. harry@gmail.com"
+      />
+      @if (employeeForm.get('email')?.hasError('email') &&
+      !employeeForm.get('email')?.hasError('required')) {
+      <mat-error>Please enter a valid email address</mat-error>
+      } @if (employeeForm.get('email')?.hasError('required')) {
+      <mat-error>Email is <strong>required</strong></mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <div class="">
+    <mat-form-field>
+      <mat-label>Education</mat-label>
+      <mat-select formControlName="education">
+        @for (option of educationOptions; track $index) {
+        <mat-option value={{option}}>{{ option }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="">
+    <mat-form-field>
+      <mat-label>Date Of Birth</mat-label>
+      <input matInput formControlName="dob" [matDatepicker]="picker" />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="">
+    <mat-form-field>
+      <mat-label>Experience</mat-label>
+      <input
+        type="number"
+        required
+        matInput
+        formControlName="experience"
+        placeholder=""
+      />
+    </mat-form-field>
+  </div>
+  <button type="submit" mat-fab extended>Submit</button>
+</form>

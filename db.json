@@ -1,14 +1,31 @@
 {
   "users": [
     {
-      "id": "9f2aefb4-3x6f-43d4-9b4-cc0f286f98fa",
-      "name": "EMMMSS",
-      "age": 24
-    },
-    {
       "id": "9f5aefb4-3x6f-43d4-9b4-cc0f286f98fa",
       "name": "sadsd",
       "age": 22
+    }
+  ],
+  "employees": [
+    {
+      "id": "9f5aefb4-3x6f-43d4-9b4-cc0f286f98fa",
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "gender": "Male",
+      "email": "hello@gmail.com",
+      "education": "UG",
+      "dob": "2024-10-06T18:04:47.502Z",
+      "experience": 8
+    },
+    {
+      "id": "e9bc9304-a0f3-4e6c-aa4a-b3fadc16a253",
+      "firstName": "James",
+      "lastName": "Maddison",
+      "gender": "Male",
+      "email": "James@gmail.com",
+      "education": "PG",
+      "dob": "2024-10-06T18:10:18.031Z",
+      "experience": 4
     }
   ]
 }

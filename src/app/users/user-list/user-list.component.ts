@@ -20,10 +20,10 @@ export class UserListComponent {
     });
   }
   deleteUser(id: string) {
-    this.userService
-      .deleteUsers(id)
-      .subscribe(() => console.log('Deleted Users'));
-    this.loadUsers();
+    this.userService.deleteUsers(id).subscribe(() => {
+      console.log('Deleted Users');
+      this.loadUsers();
+    });
   }
   editUser(id: any) {
     this.router.navigate(['users/user-form', id]);
