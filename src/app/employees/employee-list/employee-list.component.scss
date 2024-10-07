@@ -1,0 +1,25 @@
+h1 {
+    color: antiquewhite;
+}
+
+.AddButton {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+.employee-list-container {
+  margin: 3%;
+}
+
+table {
+    // background-color: transparent;
+    border-radius: 10px;
+    // overflow: auto;
+}
+
+.edit-button {
+    background-color: rgb(255, 170, 0);
+}
+.delete-button {
+    background-color: red;
+}

@@ -41,7 +41,7 @@ export class EmployeeFormComponent {
           gender: data.gender,
           email: data.email,
           education: data.education,
-          dob: new Date(),
+          dob: data.dob,
           experience: data.experience,
         });
       });
@@ -49,11 +49,6 @@ export class EmployeeFormComponent {
   }
 
   handleSubmit() {
-    // if (!(this.employeeForm.value.name && this.employeeForm.value.age)) {
-    //   alert('Cannot be empty!');
-    //   return;
-    // }
-
     if (this.editID) {
       const existingEmployee: any = {
         id: this.editID,

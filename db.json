@@ -24,8 +24,18 @@
       "gender": "Male",
       "email": "James@gmail.com",
       "education": "PG",
-      "dob": "2024-10-06T18:10:18.031Z",
+      "dob": "2024-10-01T18:30:00.000Z",
       "experience": 4
+    },
+    {
+      "id": "d73ec891-b4f4-4a96-b2b9-603c62ba01bb",
+      "firstName": "Hermione",
+      "lastName": "Granger",
+      "gender": "Female",
+      "email": "hermione@gmail.com",
+      "education": "PG",
+      "dob": "2001-10-02T18:30:00.000Z",
+      "experience": 6
     }
   ]
 }

@@ -1,0 +1,28 @@
+.form-container {
+    margin: 2%;
+}
+form {
+    background-color: black;
+    width: 50%;
+    margin: auto;
+    border-radius: 15px;
+    color: antiquewhite;
+}
+tr {
+    // width: 100%;
+    display: flex;
+    // justify-content: center;
+}
+td {
+    margin: 5%;
+    width: 100%;
+}
+table {
+    width: 100%;
+}
+button {    
+    width: 100%;
+}
+mat-form-field {
+    width: 100%;
+}
