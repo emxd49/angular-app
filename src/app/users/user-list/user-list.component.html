@@ -11,11 +11,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
-      <td scope="row">{{ user.id }}</td>
+      <td scope="row">{{ user._id }}</td>
       <td>{{ user.name }}</td>
       <td>{{ user.age }}</td>
-      <td><button class="btn btn-warning" (click)="editUser(user.id)">Edit</button></td>
-      <td><button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button></td>
+      <td><button class="btn btn-warning" (click)="editUser(user._id)">Edit</button></td>
+      <td><button class="btn btn-danger" (click)="deleteUser(user._id)">Delete</button></td>
     </tr>
   </tbody>
 </table>

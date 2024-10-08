@@ -44,16 +44,16 @@ export class UserFormComponent {
     }
     if (this.editID) {
       const user: IUsers = {
-        id: this.editID,
+        // _id: this.editID,
         name: this.userForm.value.name,
         age: this.userForm.value.age,
       };
       this.userService
-        .editUser(user)
+        .editUser(this.editID, user)
         .subscribe((data) => console.log('Updated: ', data));
     } else {
       const user: IUsers = {
-        id: crypto.randomUUID(),
+        // id: crypto.randomUUID(),
         name: this.userForm.value.name,
         age: this.userForm.value.age,
       };

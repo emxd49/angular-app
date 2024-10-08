@@ -7,7 +7,7 @@ import { IUsers } from '../data.model';
   providedIn: 'root',
 })
 export class UserService {
-  baseURL = 'http://localhost:5000/users';
+  baseURL = 'http://localhost:5001/api/users';
   constructor(private http: HttpClient) {}
 
   getUser(id: string): Observable<IUsers> {
@@ -18,9 +18,9 @@ export class UserService {
   }
   deleteUsers(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/${id}`);
-  }
-  editUser(user: IUsers) {
-    return this.http.patch(`${this.baseURL}/${user.id}`, user);
+  } 
+  editUser(id:any, user: IUsers) {
+    return this.http.put(`${this.baseURL}/${id}`, user);
   }
   addUser(user: IUsers) {
     return this.http.post(this.baseURL, user);

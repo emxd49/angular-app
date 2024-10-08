@@ -1,11 +1,11 @@
 export interface IUsers {
-  id: string;
+  _id?: string ;
   name: string;
   age: number;
 }
 
 export interface IEmployees {
-  id: string;
+  _id: string;
   firstName: string;
   lastName: string;
   gender: string;

@@ -51,7 +51,7 @@ export class EmployeeFormComponent {
   handleSubmit() {
     if (this.editID) {
       const existingEmployee: any = {
-        id: this.editID,
+        // id: this.editID,
         firstName: this.employeeForm.value.fName,
         lastName: this.employeeForm.value.lName,
         gender: this.employeeForm.value.gender,
@@ -61,11 +61,11 @@ export class EmployeeFormComponent {
         experience: this.employeeForm.value.experience,
       };
       this.employeeService
-        .updateEmployee(existingEmployee)
+        .updateEmployee(this.editID, existingEmployee)
         .subscribe((data) => console.log('Updated: ', data));
     } else {
       const newEmployee: any = {
-        id: crypto.randomUUID(),
+        // id: crypto.randomUUID(),
         firstName: this.employeeForm.value.fName,
         lastName: this.employeeForm.value.lName,
         gender: this.employeeForm.value.gender,

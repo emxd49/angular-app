@@ -17,9 +17,11 @@ export class UserListComponent {
   loadUsers() {
     this.userService.getUsers().subscribe((users) => {
       this.users = users;
+      console.log(users);
+      
     });
   }
-  deleteUser(id: string) {
+  deleteUser(id: any) {
     this.userService.deleteUsers(id).subscribe(() => {
       console.log('Deleted Users');
       this.loadUsers();

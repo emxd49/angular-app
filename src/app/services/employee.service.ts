@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class EmployeeService {
-  baseURL = 'http://localhost:5000/employees';
+  baseURL = 'http://localhost:5000/api/employee';
   constructor(private http: HttpClient) {}
 
   getEmployee(id: string): Observable<IEmployees> {
@@ -19,8 +19,8 @@ export class EmployeeService {
   deleteEmployee(id: string): Observable<any> {
     return this.http.delete(`${this.baseURL}/${id}`);
   }
-  updateEmployee(employee: IEmployees) {
-    return this.http.patch(`${this.baseURL}/${employee.id}`, employee);
+  updateEmployee(id: string, employee: IEmployees) {
+    return this.http.put(`${this.baseURL}/${id}`, employee);
   }
   addEmployee(employee: IEmployees) {
     return this.http.post(this.baseURL, employee);
