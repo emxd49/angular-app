@@ -22,6 +22,8 @@ import {
   MatRadioGroup,
   MatRadioModule,
 } from '@angular/material/radio';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortHeader, MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [EmployeeListComponent, EmployeeFormComponent],
@@ -42,6 +44,8 @@ import {
     MatOptionModule,
     MatButtonModule,
     MatRadioModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
 })
 export class EmployeesModule {}

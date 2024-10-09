@@ -1,20 +1,25 @@
 h1 {
-    color: antiquewhite;
+    color: white;
 }
 
 .AddButton {
-  position: absolute;
-  top: 40px;
-  right: 40px;
+  background-color: rgb(132, 255, 255);
 }
 .employee-list-container {
   margin: 3%;
 }
 
+.header-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
 table {
-    // background-color: transparent;
-    border-radius: 10px;
-    // overflow: auto;
+    // background-color: black;
+    // border-radius: 10px;
 }
 
 .edit-button {
@@ -22,4 +27,7 @@ table {
 }
 .delete-button {
     background-color: red;
+}
+mat-form-field {
+  width: 100%;
 }

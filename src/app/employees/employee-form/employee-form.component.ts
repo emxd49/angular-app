@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from '../../services/employee.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IEmployees } from '../../data.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-employee-form',
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.scss',
 })
 export class EmployeeFormComponent {
+  snackBar = inject(MatSnackBar);
   editID: string | null = null;
   educationOptions: string[] = ['UG', 'PG', 'MBA'];
 
@@ -62,7 +63,12 @@ export class EmployeeFormComponent {
       };
       this.employeeService
         .updateEmployee(this.editID, existingEmployee)
-        .subscribe((data) => console.log('Updated: ', data));
+        .subscribe((data) => {
+          console.log('Updated: ', data);
+          this.snackBar.open('Employee successfully updated!', 'Ok', {
+            duration: 3000,
+          });
+        });
     } else {
       const newEmployee: any = {
         // id: crypto.randomUUID(),
@@ -74,9 +80,12 @@ export class EmployeeFormComponent {
         dob: this.employeeForm.value.dob,
         experience: this.employeeForm.value.experience,
       };
-      this.employeeService
-        .addEmployee(newEmployee)
-        .subscribe((data) => console.log('Updated: ', data));
+      this.employeeService.addEmployee(newEmployee).subscribe((data) => {
+        console.log('Added: ', data);
+        this.snackBar.open('Employee successfully added!', 'Ok', {
+          duration: 3000,
+        });
+      });
     }
     this.router.navigate(['employees/employee-list']);
   }
