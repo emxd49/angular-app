@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IEmployees } from '../data.model';
 import { Observable } from 'rxjs';
@@ -9,20 +9,28 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
   baseURL = 'http://localhost:5000/api/employee';
   constructor(private http: HttpClient) {}
-
+  private getHeaders(): HttpHeaders {
+    const authToken = localStorage.getItem('accessToken');
+    return new HttpHeaders({ Authorization: `Bearer ${authToken}` });
+  }
   getEmployee(id: string): Observable<IEmployees> {
-    return this.http.get<IEmployees>(`${this.baseURL}/${id}`);
+    const headers = this.getHeaders();
+    return this.http.get<IEmployees>(`${this.baseURL}/${id}`, { headers });
   }
   getEmployees(): Observable<IEmployees[]> {
-    return this.http.get<IEmployees[]>(this.baseURL);
+    const headers = this.getHeaders();
+    return this.http.get<IEmployees[]>(this.baseURL, { headers });
   }
   deleteEmployee(id: string): Observable<any> {
-    return this.http.delete(`${this.baseURL}/${id}`);
+    const headers = this.getHeaders();
+    return this.http.delete(`${this.baseURL}/${id}`, { headers });
   }
   updateEmployee(id: string, employee: IEmployees) {
-    return this.http.put(`${this.baseURL}/${id}`, employee);
+    const headers = this.getHeaders();
+    return this.http.put(`${this.baseURL}/${id}`, employee, { headers });
   }
   addEmployee(employee: IEmployees) {
-    return this.http.post(this.baseURL, employee);
+    const headers = this.getHeaders();
+    return this.http.post(this.baseURL, employee, { headers });
   }
 }

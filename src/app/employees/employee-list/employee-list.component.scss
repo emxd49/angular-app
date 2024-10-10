@@ -1,5 +1,5 @@
 h1 {
-    color: white;
+  color: white;
 }
 
 .AddButton {
@@ -9,6 +9,10 @@ h1 {
   margin: 3%;
 }
 
+.logoutButton:hover {
+  background-color: red;
+}
+
 .header-section {
   display: flex;
   flex-direction: row;
@@ -16,17 +20,24 @@ h1 {
   align-items: center;
   margin-bottom: 2%;
 }
+.header-button {
+  display: flex;
+  align-items: center;
+  button {
+    margin-left: 40%;
+  }
+}
 
 table {
-    // background-color: black;
-    // border-radius: 10px;
+  // background-color: black;
+  // border-radius: 10px;
 }
 
 .edit-button {
-    background-color: rgb(255, 170, 0);
+  background-color: rgb(255, 170, 0);
 }
 .delete-button {
-    background-color: red;
+  background-color: red;
 }
 mat-form-field {
   width: 100%;

@@ -1,5 +1,9 @@
 <form [formGroup]="employeeForm" (ngSubmit)="handleSubmit()">
+  @if (editID) {
   <h1>Edit Employee</h1>
+  } @else {
+  <h1>Add Employee</h1>
+  }
   <div class="content">
     <div class="row">
       <mat-form-field>

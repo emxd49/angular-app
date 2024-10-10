@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -30,7 +31,8 @@ export class EmployeeListComponent {
   ];
   constructor(
     private employeeService: EmployeeService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -61,5 +63,8 @@ export class EmployeeListComponent {
   applyFilter(filter: any) {
     filter = filter.value.trim().toLowerCase();
     this.employeesData.filter = filter;
+  }
+  logoutAdmin() {
+    this.authService.logOutAdmin();
   }
 }

@@ -1,5 +1,5 @@
 export interface IUsers {
-  _id?: string ;
+  _id?: string;
   name: string;
   age: number;
 }
@@ -13,4 +13,9 @@ export interface IEmployees {
   education: string;
   dob: Date;
   experience: number;
+}
+
+export interface IAdmin {
+  username: string;
+  password: string;
 }

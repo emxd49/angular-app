@@ -1,0 +1,37 @@
+<form [formGroup]="adminForm" (ngSubmit)="handleSubmit()">
+  <h1>Admin Login</h1>
+  <div class="content">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>username</mat-label>
+        <input type="text" required matInput formControlName="username" />
+        @if (adminForm.get('username')?.hasError('required')) {
+        <mat-error>Please enter username</mat-error>
+        }
+      </mat-form-field>
+      </div>
+    <div class="row">
+      <mat-form-field>
+        <mat-label>password</mat-label>
+        <input type="password" required matInput formControlName="password" />
+        @if (adminForm.get('password')?.hasError('required')) {
+        <mat-error>Please enter password</mat-error>
+        }
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="action">
+    <button type="submit" [disabled]="adminForm.invalid" mat-fab extended>
+      Login
+    </button>
+    <!-- <button
+      style="background-color: rgb(255, 136, 0)"
+      type="button"
+      routerLink="/"
+      mat-fab
+      extended
+    >
+      Cancel
+    </button> -->
+  </div>
+</form>

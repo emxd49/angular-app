@@ -1,9 +1,16 @@
 <div class="employee-list-container">
   <div class="header-section">
-    <h1>Employees</h1>
-    <button mat-fab (click)="addEmployee()" class="AddButton">
-      <mat-icon>add</mat-icon>
-    </button>
+    <div class="header-button">
+      <div>
+        <h1>Employees</h1>
+      </div>
+      <div>
+        <button mat-fab (click)="addEmployee()" class="AddButton">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </div>
+    <button mat-flat-button (click)="logoutAdmin()" class="logoutButton">Logout</button>
   </div>
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target)" placeholder="Filter" />

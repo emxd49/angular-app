@@ -1,0 +1,50 @@
+:host {
+    // width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  mat-label {
+      font-size: 1.1rem;
+  }
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    width: 40%;
+    padding: 2% 0%;
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+  }
+  
+  .content {
+    //   padding: 20px;
+    margin: 40px 15px;
+  }
+  
+  .row {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px;
+    mat-form-field {
+      width: 90%;
+    }
+  }
+
+
+  .action {
+    padding: 0 25px 20px;
+    display: flex;
+    justify-content: space-around;
+    button {
+      margin: 10px;
+      width: 40%;
+    }
+  }
+  
